@@ -10,7 +10,8 @@ const NewClient = () => {
   })
 
   const handleInputChange = (event) => {
-    setClient({...useClient, [event.target.id]: event.target.value})
+    const { id, value} = event.target
+    setClient({...useClient, [id]: value})
   }
 
 
