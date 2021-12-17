@@ -1,8 +1,7 @@
 import React from "react";
 import "./NumberOfPets.css";
 
-class NumberOfPets extends React.Component {
-  render() {
+const NumberOfPets = () => {
     return (
       <section className="num-of-pets">
         <h4>Number of Pets</h4>
@@ -13,7 +12,6 @@ class NumberOfPets extends React.Component {
         </div>
       </section>
     );
-  }
 }
 
 export default NumberOfPets;
