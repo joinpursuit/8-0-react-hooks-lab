@@ -3,7 +3,7 @@ import "./NumberOfPets.css";
 
 const NumberOfPets = () => {
 
-    let [count, setCount] = useState(0)
+    let [count, setCount] = useState(1)
 
     const handleCounter = (event) => {
       setCount(count = event.target.id === "less" ? count - 1 : count + 1)
