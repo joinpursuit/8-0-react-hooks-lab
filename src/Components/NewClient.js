@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState} from "react";
 import "./NewClient.css";
 
-class NewClient extends React.Component {
-  render() {
+const NewClient = () =>{
+const [] = useState()
+ 
+  
     return (
       <section className="new-client">
         <h4>New Client Info</h4>
@@ -27,6 +29,5 @@ class NewClient extends React.Component {
       </section>
     );
   }
-}
 
 export default NewClient;
