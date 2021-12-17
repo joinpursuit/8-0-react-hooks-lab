@@ -2,6 +2,17 @@ import React, {useState} from "react";
 import "./NewClient.css";
 
 const NewClient = () => {
+  const [useClient, setClient] = useState({
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: ''
+  })
+
+  const handleInputChange = (event) => {
+    setClient({...useClient, [event.target.id]: event.target.value})
+  }
+
 
   return (
     <section className="new-client">
@@ -9,19 +20,19 @@ const NewClient = () => {
       <div>
         <form>
           <label htmlFor="firstName">First Name</label>
-          <input type="text" id="firstName" />
+          <input onChange={handleInputChange} type="text" id="firstName" />
           <label htmlFor="lastName">Last Name</label>
-          <input type="text" id="lastName" />
+          <input onChange={handleInputChange} type="text" id="lastName" />
           <label htmlFor="phone">Telephone</label>
-          <input type="tel" id="phone" />
+          <input onChange={handleInputChange} type="tel" id="phone" />
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" />
+          <input onChange={handleInputChange} type="email" id="email" />
         </form>
         <article>
-          <h5>firstName</h5>
-          <h5>lastName</h5>
-          <h5>phone</h5>
-          <h5>email</h5>
+          <h5>{useClient.firstName}</h5>
+          <h5>{useClient.lastName}</h5>
+          <h5>{useClient.phone}</h5>
+          <h5>{useClient.email}</h5>
         </article>
       </div>
     </section>
