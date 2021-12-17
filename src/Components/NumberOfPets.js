@@ -6,7 +6,10 @@ const NumberOfPets = () => {
     let [count, setCount] = useState(1)
 
     const handleCounter = (event) => {
-      setCount(count = event.target.id === "less" ? count - 1 : count + 1)
+      if(count <= 0 && event.target.id === "less"){
+        return null
+      }
+        setCount(count = event.target.id === "less" ? count - 1 : count + 1)
     }
 
     return (
