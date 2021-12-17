@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState }  from "react";
 import "./FirstPet.css";
 
 const FirstPet = () => {
+  const [ firstPet, setFirstPet ] = useState(false)  
+
+  const handleCheckBox = () => {
+    setFirstPet(!firstPet)
+  }
+
   return (
     <section className="first-pet">
       <h4>Is this your first pet?</h4>
       <br />
       <form>
-        <input type="checkbox" />
+        <input onChange={handleCheckBox} type="checkbox" />
       </form>
-      <h5></h5>
+      <h5>{firstPet ? "Yes" : "No"}</h5>
     </section>
   );
 };
