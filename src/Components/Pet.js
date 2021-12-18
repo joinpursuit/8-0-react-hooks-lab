@@ -1,4 +1,4 @@
-import "./Pet.css";
+import './Pet.css';
 
 export const Pet = ({ name, kind, breed }) => {
   return (
