@@ -1,26 +1,30 @@
 import React, {useState} from "react";
 import "./AnimalTypes.css";
 
-
+const animalTypes = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"]
 
 const AnimalTypes = () => {
 
   const [useObj, setObj] = useState({
     userInput: '',
-    animalTypes: ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"]
+    animalTypes,
   })
 
   const handleInputChange = (event) => {
-    setObj({...useObj, userInput: event.target.value})
+    const { value } = event.target
+    setObj({...useObj, userInput: value})
   }
 
   const handleRemoveAnimal = (event) => {
-    setObj({...useObj, animalTypes: useObj.animalTypes.filter(el => el !== useObj.animalTypes[event.target.id])})
+    const {animalTypes: types} = useObj
+    const { id } = event.target
+    setObj({...useObj, animalTypes: types.filter(el => el !== types[id])})
   }
 
   const handleAddPet = (event) => {
     event.preventDefault()
-    setObj({...useObj, animalTypes: [...useObj.animalTypes, useObj.userInput]})
+    const {animalTypes: types, userInput} = useObj
+    setObj({...useObj, animalTypes: [...types, userInput]})
   }
 
   return (
