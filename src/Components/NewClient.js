@@ -12,7 +12,6 @@ const NewClient = () => {
 
   const handleInputs = (event) => {
     setHandleForm({...handleForm, [event.target.name]: event.target.value })
-    console.log(handleForm)
   }
 
   return (
