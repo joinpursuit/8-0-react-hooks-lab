@@ -23,10 +23,12 @@ const AnimalTypes = () => {
   } 
 
   const handleDelete = (event) => {
-    event.target.parentNode.remove()
+    const deletedType = event.target.parentNode.innerText.split("\n")[1]
+    // Use innerText here, which will display delete and then the list item in a new line (separated by "\n")
+    setHandleForm({...handleForm, animalTypes: handleForm.animalTypes.filter((type) => type !== deletedType)})
   }
 
-  const results = handleForm.animalTypes.map((type, i) => <li  key={i}><button onClick={handleDelete}></button>{type}</li>)
+  const results = handleForm.animalTypes.map((type, i) => <li  key={i}><button onClick={handleDelete}>delete</button>{type}</li>)
 
   return (
     <section className={"animal-types"}>
