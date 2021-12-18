@@ -2,9 +2,12 @@ import "./NumberOfPets.css";
 import { useState } from "react";
 
 function NumberOfPets() {
-	const [count, useCount] = useState(0);
+	const [count, setCount] = useState(0);
 	const Minus = () => {
-		useCount(count - 1);
+		if (count < 1) {
+			return;
+		}
+		setCount(count - 1);
 	};
 	return (
 		<section className="num-of-pets">
@@ -17,7 +20,7 @@ function NumberOfPets() {
 				<button
 					id="more"
 					onClick={function Adding() {
-						useCount(count + 1);
+						setCount(count + 1);
 					}}
 				>
 					+
