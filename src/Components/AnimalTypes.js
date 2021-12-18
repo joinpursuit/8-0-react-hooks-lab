@@ -32,7 +32,7 @@ const AnimalTypes = () => {
         </label>
         <input type="submit" />
       </form>
-      <ol>{useObj.animalTypes.map((el, index) =>  <li>{el}<button id={index} onClick={handleRemoveAnimal}></button></li>)}</ol>
+      <ol>{useObj.animalTypes.map((el, index) =>  <li key={index}>{el}<button id={index} onClick={handleRemoveAnimal}></button></li>)}</ol>
     </section>
   );
 }
