@@ -3,8 +3,7 @@ import Pet from "./Pet";
 import "./PetList.css";
 import axios from "axios";
 
-// const BASE_URL = "http://localhost:5000/api";
-const BASE_URL = "https://raw.githubusercontent.com/joinpursuit/resource-veterinarian-api/main/data/db.json";
+const BASE_URL = "http://localhost:3001/api";
 
 const PetList = () => {
 
@@ -12,9 +11,8 @@ const PetList = () => {
 
   useEffect(()=> {
     async function fetchData() {
-        const {data: {pets}} = await axios.get(BASE_URL)
-
-        const animals = pets.map((el, i) => {
+        const {data} = await axios.get(BASE_URL + "/pets")
+        const animals = data.map((el, i) => {
         return <Pet key={i} pet={el}/>
       })
 
