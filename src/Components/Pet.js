@@ -1,8 +1,15 @@
-import "./Pet.css";
+import './Pet.css';
 
-export const Pet = ({ name, kind, breed }) => {
+const Pet = ({
+  pet: {
+    name = 'unknown',
+    kind = 'unknown',
+    breed = 'unknown',
+    key: id = 'noId',
+  },
+}) => {
   return (
-    <div className="pet">
+    <div className="pet" key={id}>
       <h3>{name}</h3>
       <h4>{breed}</h4>
       <h5>{kind}</h5>
