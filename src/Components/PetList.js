@@ -10,17 +10,19 @@ const PetList = () => {
 
   const [useAnimalInfo , setAnimalInfo] = useState(null)
 
-  useEffect(async ()=> {
-    const {data: {pets}} = await axios.get(BASE_URL)
+  useEffect(()=> {
+    async function fetchData() {
+        const {data: {pets}} = await axios.get(BASE_URL)
 
-    const animals = pets.map((el, i) => {
-     return <Pet key={i} pet={el}/>
-  })
+        const animals = pets.map((el, i) => {
+        return <Pet key={i} pet={el}/>
+      })
 
-    setAnimalInfo(animals)
+      setAnimalInfo(animals)
+    }
+    fetchData()
   }, [])
   
-  console.log(useAnimalInfo)
     return (
       <section className="pet-list">
         <h4>All Pets</h4>
