@@ -22,7 +22,7 @@ const AnimalTypes = () => {
   }
 
   console.log(typedAnimal)
-
+ 
 // when submitting, if the userInput matches with one of the animals in the array, add it to the state, addThisAnimal.
 // if there is a duplicate, it cannot be added again.
   const handleSubmit = (e) => {
