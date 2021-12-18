@@ -2,14 +2,14 @@ import React, {useState, useEffect} from "react";
 import Pet from "./Pet";
 import "./PetList.css";
 
-const BASE_URL = "https://vet-api-8-1.herokuapp.com/api/pets";
+const BASE_URL = "https://vet-api-8-1.herokuapp.com/";
 
 const PetList = () => {
 
   const [ allPets, setAllPets ] = useState([])
 
   useEffect(() => {
-    fetch(BASE_URL)
+    fetch(`${BASE_URL}api/pets`)
     .then((response) => response.json())
     .then((pets) => setAllPets(pets))
     .catch(console.log) 
