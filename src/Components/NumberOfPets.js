@@ -6,7 +6,9 @@ const NumberOfPets = () => {
   const [numOfPets, setNumOfPets] = useState(0);
   
   const subtract = () => {
-    setNumOfPets(numOfPets - 1)
+    setNumOfPets(
+      numOfPets === 0 ? 0 : numOfPets - 1
+    )
   }
 
   const add = () => {
