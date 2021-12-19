@@ -15,8 +15,9 @@ const AnimalTypes = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setData([...data, userInput])
-    setUserInput("")
+    data.includes(userInput) 
+    ? setUserInput("")
+    : setData([...data, userInput]) 
   }
 
   const handleRemove = (event) => {
