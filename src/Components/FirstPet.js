@@ -4,10 +4,6 @@ import "./FirstPet.css";
 const FirstPet = (props) => {
 
   const [checked, setChecked] = useState(false);
-  console.log(checked)
-
-
-
 
   return (
     <section className="first-pet">
