@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Pet from "./Pet"
 import "./PetList.css";
 
-const BASE_URL = "http://localhost:5000/api";
+// const BASE_URL = "http://localhost:5000/api";
 
 const PetList = () => {
 

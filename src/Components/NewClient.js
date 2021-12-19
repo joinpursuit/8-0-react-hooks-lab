@@ -14,7 +14,6 @@ const NewClient = () => {
     setNewClientForm({ ...newClientForm, [event.target.name]: event.target.value })
   }
 
-  console.log(newClientForm)
 
   return (
     <section className="new-client">
