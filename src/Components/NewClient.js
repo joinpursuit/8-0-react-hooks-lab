@@ -37,7 +37,6 @@ class NewClient extends React.Component {
     })
   }
 
-
   render() {
     return (
       <section className="new-client">
