@@ -38,9 +38,6 @@ class PetList extends React.Component {
             <br />
             {pet.kind}
           </h5>
-          {/* <h5>{pet.name}</h5>
-          <h5>{pet.breed}</h5>
-          <h5>{pet.kind}</h5> */}
         </div>
       )
     })
