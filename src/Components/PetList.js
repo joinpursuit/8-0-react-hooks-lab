@@ -28,12 +28,19 @@ class PetList extends React.Component {
   }
 
   render() {
-    const petList = this.state.animalData.map((pet, index)=>{
+    const petList = this.state.animalData.map((pet)=>{
       return (
         <div>
-          <h5>{pet.name}</h5>
+          <h5>
+            {pet.name}
+            <br />
+            {pet.breed}
+            <br />
+            {pet.kind}
+          </h5>
+          {/* <h5>{pet.name}</h5>
           <h5>{pet.breed}</h5>
-          <h5>{pet.kind}</h5>
+          <h5>{pet.kind}</h5> */}
         </div>
       )
     })
