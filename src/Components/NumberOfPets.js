@@ -5,13 +5,13 @@ import { useState } from "react"
 const NumberOfPets = () => {
   const [numOfPets, setNumOfPets] = useState(0)
 
-  const handleAddition = () => {
+  const handleIncrease = () => {
     if(numOfPets >= 0) {
       setNumOfPets(numOfPets + 1)
     }
   }
 
-  const handleDeduction = () => {
+  const handleDecrease = () => {
     if(numOfPets > 0) {
       setNumOfPets(numOfPets - 1)
     }
@@ -22,8 +22,8 @@ const NumberOfPets = () => {
         <h4>Number of Pets</h4>
         <h5>{numOfPets}</h5>
         <div>
-          <button id="less" onClick={handleDeduction}>-</button>
-          <button id="more" onClick={handleAddition}>+</button>
+          <button id="less" onClick={handleDecrease}>-</button>
+          <button id="more" onClick={handleIncrease}>+</button>
         </div>
       </section>
     );
