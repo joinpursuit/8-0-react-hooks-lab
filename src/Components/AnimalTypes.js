@@ -10,12 +10,14 @@ const AnimalTypes = () => {
 
   const handleInput = (event) => {
     setForm({...handleForm, [event.target.name]: event.target.value.trim().toLowerCase()})
-  }
+  }//trim removes white space. You probably don't need it but playing around. 
 
   const submits = (event) => {
     event.preventDefault(); 
 
     !handleForm.animalTypes.some((type) => type === handleForm.userInput) && handleForm.animalTypes.push(handleForm.userInput)
+
+    //Honestly the shorter of doing this wasn't working for me so just went with this.
 
     setForm({...handleForm, animalTypes: handleForm.animalTypes })
 

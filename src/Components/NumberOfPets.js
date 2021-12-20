@@ -27,5 +27,5 @@ const NumberOfPets = () => {
       </section>
     );
   }
-//this isn't passing but I feel like it should be correct. Check in with Tashawnee to see if she can see issue. 
+//Syntax error had more in less. 
 export default NumberOfPets;

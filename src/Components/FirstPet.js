@@ -8,7 +8,7 @@ const FirstPet = () => {
   const handleCheck = () => {
     setPets(!NumberOfPets)
   }
-  //This didn't wor when it was true and I don't understand why
+  //This didn't work when it was true and I don't understand why but passes.
     return (
       <section className="first-pet">
         <h4>Is this your first pet?</h4>
