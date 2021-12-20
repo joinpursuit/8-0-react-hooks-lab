@@ -1,8 +1,6 @@
-import React from "react";
 import "./NavBar.css";
 
-export class NavBar extends React.Component {
-  render() {
+const NavBar = () => {
     return (
       <nav>
         <h1>Northwest Animal Hospital</h1>
@@ -10,6 +8,6 @@ export class NavBar extends React.Component {
       </nav>
     );
   }
-}
+
 
 export default NavBar;
