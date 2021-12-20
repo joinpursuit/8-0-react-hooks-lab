@@ -4,7 +4,7 @@ import "./FirstPet.css";
 const FirstPet = () => {
   const [checked, setChecked] = useState(false)
 
-  const handleCheckBox = (event) => {
+  const handleCheckBox = () => {
     setChecked(!checked)
   }
   
