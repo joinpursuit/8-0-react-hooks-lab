@@ -13,7 +13,7 @@ const FirstPet = () => {
       <form>
         <input type="checkbox" onChange={handleCheckBox} />
       </form>
-      <h5>{checked ? "yes" : "no"}</h5>
+      <h5>{checked ? "Yes" : "No"}</h5>
     </section>
   );
 };
