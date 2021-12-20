@@ -3,7 +3,7 @@ import "./NumberOfPets.css";
 
 const NumberOfPets = () => {
   //was unsure how to do this with react.component so I switched it around to fit what we did in class. 
-  
+
  let [numOfPets, setNumOfPets] = useState(0);
  //if this works... I will be using this constant the same way you would typically use a constructor/set state. 
 
@@ -21,8 +21,8 @@ const NumberOfPets = () => {
         <h4>Number of Pets</h4>
         <h5>{numOfPets}</h5>
         <div>
-          <button id="less" onClick={addPets}>-</button>
-          <button id="more" onClick={deletePet}>+</button>
+          <button id="less" onClick={deletePet}>-</button>
+          <button id="more" onClick={addPets}>+</button>
         </div>
       </section>
     );
