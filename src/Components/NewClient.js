@@ -29,10 +29,10 @@ const NewClient = () => {
           <input onChange={handleChange} type="email" id="email" />
           </form>
           <article>
-            <h5>{client.firstName}</h5>
-            <h5>{client.lastName}</h5>
-            <h5>{client.phone}</h5>
-            <h5>{client.email}</h5>
+            <h5>First Name: {client.firstName}</h5>
+            <h5>Last Name: {client.lastName}</h5>
+            <h5>Phone Number: {client.phone}</h5>
+            <h5>Email Address: {client.email}</h5>
           </article>
         </div>
     </section>
