@@ -6,7 +6,7 @@ const animalTypes = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
 const AnimalTypes = () => {
   let [animalArr, setAnimalArr] = useState(animalTypes);
   const onClicky = (ev) => {
-    const remove = event.target.parentNode.innerText;
+    const remove = ev.target.parentNode.innerText;
     const filter = animalArr.filter((animal) => animal !== remove)
     setAnimalArr(filter);
   }
@@ -16,7 +16,7 @@ const AnimalTypes = () => {
     const input = ev.target.search.value;
     (!animalArr.includes(input)) && (animalArr = animalArr.concat([input]));
     setAnimalArr(animalArr);
-    ev.target.result;
+    ev.target.reset();
   }
 
   const animalMap = animalArr.map((animal) => {
