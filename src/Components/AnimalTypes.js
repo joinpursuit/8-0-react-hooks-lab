@@ -1,21 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import "./AnimalTypes.css";
 
 const animalTypes = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
 
-class AnimalTypes extends React.Component {
+const AnimalTypes = () => {
+  let [animalArr, setAnimalArr] = useState(animalTypes);
+  const onClicky = (ev) => {
+    const remove = event.target.parentNode.innerText;
+    const filter = animalArr.filter((animal) => animal !== remove)
+    setAnimalArr(filter);
+  }
   render() {
     return (
-      <section className={"animal-types"}>
-        <h4>Animal Types</h4>
-        <form>
-          <label htmlFor="type">
-            <input type="text" id="animal-type" />
-          </label>
-          <input type="submit" />
-        </form>
-        <ol></ol>
-      </section>
+      
     );
   }
 }
