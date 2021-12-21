@@ -1,22 +1,14 @@
 import React from "react";
+import { useState } from 'react';
 import "./FirstPet.css";
 
-class FirstPet extends React.Component {
-  constructor(){
-    super();
+const FirstPet = () => {
+  const [ display, setDisplay ] = useState(true);
 
-    this.state = {
-      display: true,
+  const handleCheckbox=(e)=>{
+      setDisplay(e.target.checked)
     }
-  }
-
-  handleCheckbox=(e)=>{
-    this.setState({
-      display: e.target.checked,
-    })
-  }
-
-  render() {
+  
     return (
       <section className="first-pet">
         <h4>Is this your first pet?</h4>
@@ -24,14 +16,13 @@ class FirstPet extends React.Component {
         <form>
           <input 
             type="checkbox" 
-            onChange={this.handleCheckbox}
-            checked={this.state.display}
+            onChange={handleCheckbox}
+            checked={display}
           />
         </form>
-        <h5>{ this.state.display ? "Yes" : "No" }</h5>
+        <h5>{ display ? "Yes" : "No" }</h5>
       </section>
     );
-  }
 }
 
 export default FirstPet;
