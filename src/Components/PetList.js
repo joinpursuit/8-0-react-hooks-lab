@@ -3,7 +3,7 @@ import { useState } from "react/cjs/react.development";
 import Pet from "./Pet";
 import "./PetList.css";
 
-const BASE_URL = "  http://localhost:3000/pets";
+const BASE_URL = "  http://localhost:5000/pets";
 
 const PetList = () => {
   const [data, setData] = useState([]);

@@ -21,15 +21,16 @@ const AnimalTypes = () => {
   };
 
   const handleClick = (event) => {
+    console.log(event.target.name);
     setAnimals([
       ...animals.filter((item, index) => {
-        return index !== event.target.value;
+        return item !== event.target.name;
       }),
     ]);
   };
 
   return (
-    <section className={"animal-types"}>
+    <section className="animal-types">
       <h4>Animal Types</h4>
       <form onSubmit={handleSubmit}>
         <label htmlFor="type">
@@ -45,8 +46,9 @@ const AnimalTypes = () => {
       <ol>
         {animals.map((item, index) => {
           return (
-            <li key={index + item} value={index} onClick={handleClick}>
+            <li key={index + item} value={index}>
               {item}
+              <button name={item} onClick={handleClick}></button>
             </li>
           );
         })}

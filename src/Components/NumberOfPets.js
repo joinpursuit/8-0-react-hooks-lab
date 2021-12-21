@@ -6,8 +6,8 @@ const NumberOfPets = () => {
 
   return (
     <section className="num-of-pets">
-      <h4>Number of Pets: {numPets}</h4>
-      <h5>numOfPets</h5>
+      <h4>Number of Pets</h4>
+      <h5>{numPets}</h5>
       <div>
         <button
           id="less"
