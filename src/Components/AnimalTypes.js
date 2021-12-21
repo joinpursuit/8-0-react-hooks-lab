@@ -3,8 +3,7 @@ import "./AnimalTypes.css";
 
 const animalTypes = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
 
-class AnimalTypes extends React.Component {
-  render() {
+function AnimalTypes(){
     return (
       <section className={"animal-types"}>
         <h4>Animal Types</h4>
@@ -17,7 +16,6 @@ class AnimalTypes extends React.Component {
         <ol></ol>
       </section>
     );
-  }
 }
 
 export default AnimalTypes;
