@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import "./FirstPet.css";
 
-const FirstPet = () => {
+const FirstPet=()=>{
   const [ display, setDisplay ] = useState(true);
 
   const handleCheckbox=(e)=>{
