@@ -1,8 +1,8 @@
 import React from "react";
-import Pet from "./Pet";
+// import Pet from "./Pet";
 import "./PetList.css";
 
-const BASE_URL = "http://localhost:5000/api";
+// const BASE_URL = "http://localhost:5000/api";
 
 class PetList extends React.Component {
   constructor(){
@@ -30,7 +30,7 @@ class PetList extends React.Component {
   render() {
     const petList = this.state.animalData.map((pet)=>{
       return (
-        <div>
+        <div key={pet.id}>
           <h5>
             {pet.name}
             <br />
