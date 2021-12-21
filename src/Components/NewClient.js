@@ -1,43 +1,19 @@
 import React from "react";
 import "./NewClient.css";
+import { useState } from 'react';
 
-class NewClient extends React.Component {
-  constructor(){
-    super();
+const NewClient=()=> {
+  const [ clientInfo, setClientInfo ] = useState({
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: '',
+  })
 
-    this.state={
-      firstName: '',
-      lastName: '',
-      phone: '',
-      email: '',
-    }
+  const handleInput=(e)=>{
+    setClientInfo({...clientInfo, [e.target.id] : e.target.value})
   }
 
-  handleFirstNameInput=(e)=>{
-    this.setState({
-      firstName: e.target.value,
-    })
-  }
-
-  handleLastNameInput=(e)=>{
-    this.setState({
-      lastName: e.target.value,
-    })
-  }
-
-  handlePhoneInput=(e)=>{
-    this.setState({
-      phone: e.target.value,
-    })
-  }
-
-  handleEmailInput=(e)=>{
-    this.setState({
-      email: e.target.value,
-    })
-  }
-
-  render() {
     return (
       <section className="new-client">
         <h4>New Client Info</h4>
@@ -47,37 +23,36 @@ class NewClient extends React.Component {
             <input 
               type="text" 
               id="firstName" 
-              onChange={this.handleFirstNameInput}
+              onChange={(e)=>handleInput(e)}
             />
             <label htmlFor="lastName">Last Name</label>
             <input 
               type="text" 
               id="lastName" 
-              onChange={this.handleLastNameInput}
+              onChange={(e)=>handleInput(e)}
             />
             <label htmlFor="phone">Telephone</label>
             <input 
               type="tel" 
               id="phone" 
-              onChange={this.handlePhoneInput}
+              onChange={(e)=>handleInput(e)}
             />
             <label htmlFor="email">Email</label>
             <input 
               type="email" 
               id="email" 
-              onChange={this.handleEmailInput}
+              onChange={(e)=>handleInput(e)}
             />
           </form>
           <article>
-            <h5 onChange={this.handleFirstNameInput}>{ this.state.firstName }</h5>
-            <h5 onChange={this.handleLastNameInput}>{ this.state.lastName }</h5>
-            <h5 onChange={this.handlePhoneInput}>{ this.state.phone }</h5>
-            <h5 onChange={this.handleEmailInput}>{ this.state.email }</h5>
+            <h5>{ clientInfo.firstName }</h5>
+            <h5>{ clientInfo.lastName }</h5>
+            <h5>{ clientInfo.phone }</h5>
+            <h5>{ clientInfo.email }</h5>
           </article>
         </div>
       </section>
     );
-  }
 }
 
 export default NewClient;

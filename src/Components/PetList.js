@@ -1,34 +1,26 @@
 import React from "react";
 // import Pet from "./Pet";
 import "./PetList.css";
+import { useState, useEffect } from 'react';
 
 // const BASE_URL = "http://localhost:5000/api";
 
-class PetList extends React.Component {
-  constructor(){
-    super();
+const PetList=()=>{
+  const [ animalData, setAnimalData ] = useState([])
 
-    this.state={
-      animalData: [],
-    }
-  }
+  useEffect(()=>{
+    fetchAnimalData();
+  }, []);
 
-  fetchAnimalData=()=>{
+  const fetchAnimalData=()=>{
     fetch("https://raw.githubusercontent.com/joinpursuit/resource-veterinarian-api/main/data/db.json")
       .then(res=>res.json())
       .then((data)=>{
-        this.setState({
-          animalData: data.pets,
-        })
+        setAnimalData(data.pets)
       })
   }
 
-  componentDidMount=()=>{
-    this.fetchAnimalData();
-  }
-
-  render() {
-    const petList = this.state.animalData.map((pet)=>{
+    const petList = animalData.map((pet)=>{
       return (
         <div key={pet.id}>
           <h5>
@@ -48,7 +40,6 @@ class PetList extends React.Component {
         <article>{ petList }</article>
       </section>
     );
-  }
 }
 
 export default PetList;
