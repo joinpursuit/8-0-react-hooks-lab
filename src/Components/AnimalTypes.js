@@ -10,6 +10,7 @@ const AnimalTypes = () => {
     const filter = animalArr.filter((animal) => animal !== remove)
     setAnimalArr(filter);
   }
+
   const submit = (ev) => {
     ev.preventDefault();
     const input = ev.target.search.value;
@@ -17,11 +18,30 @@ const AnimalTypes = () => {
     setAnimalArr(animalArr);
     ev.target.result;
   }
-  render() {
+
+  const animalMap = animalArr.map((animal) => {
     return (
-      
+      <li>
+        {animal}
+        <button onClick={onClicky} value="-"></button>
+      </li>
+    )
+  })
+
+    return (
+      <section className={"animal-types"}>
+        <h4>Animal Types</h4>
+        <form onSubmit={submit}>
+          <label htmlFor="type">
+            <input type="text" id="animal-type" name="search" />
+          </label>
+          <input type="submit" />
+        </form>
+        <ol>
+          {animalMap}
+        </ol>
+      </section>
     );
-  }
 }
 
 export default AnimalTypes;
