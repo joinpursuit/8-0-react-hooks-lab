@@ -1,6 +1,8 @@
 import "./Pet.css";
+import React from "react";
 
-export const Pet = ({ name, kind, breed }) => {
+export const Pet = (props) => {
+  let { name, kind, breed } = props.info;
   return (
     <div className="pet">
       <h3>{name}</h3>
