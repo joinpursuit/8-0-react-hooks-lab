@@ -1,5 +1,6 @@
 import "./Pet.css";
 
+// const {name, kind, breed} = this.props is the same as...
 export const Pet = ({ name, kind, breed }) => {
   return (
     <div className="pet">
