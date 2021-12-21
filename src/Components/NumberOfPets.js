@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NumberOfPets.css";
 
-class NumberOfPets extends React.Component {
-  render() {
-    return (
-      <section className="num-of-pets">
-        <h4>Number of Pets</h4>
-        <h5>numOfPets</h5>
-        <div>
-          <button id="less">-</button>
-          <button id="more">+</button>
-        </div>
-      </section>
-    );
-  }
-}
+const NumberOfPets = () => {
+  const [numberOfPets, setNumber] = useState(0); //setNumber = this.setState...changes numberOfPets
+
+  const incrementByOne = () => {
+    setNumber(numberOfPets + 1);
+  };
+
+  const decreaseByOne = () => {
+    if (numberOfPets < 1) {
+      return;
+    }
+    setNumber(numberOfPets - 1);
+  };
+
+  return (
+    <section className="num-of-pets">
+      <h4>Number of Pets</h4>
+      <h5>{numberOfPets}</h5>
+      <div>
+        <button onClick={decreaseByOne} id="less">
+          -
+        </button>
+        <button onClick={incrementByOne} id="more">
+          +
+        </button>
+      </div>
+    </section>
+  );
+};
 
 export default NumberOfPets;
