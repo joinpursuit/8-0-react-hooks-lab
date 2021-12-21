@@ -10,6 +10,13 @@ const AnimalTypes = () => {
     const filter = animalArr.filter((animal) => animal !== remove)
     setAnimalArr(filter);
   }
+  const submit = (ev) => {
+    ev.preventDefault();
+    const input = ev.target.search.value;
+    (!animalArr.includes(input)) && (animalArr = animalArr.concat([input]));
+    setAnimalArr(animalArr);
+    ev.target.result;
+  }
   render() {
     return (
       
