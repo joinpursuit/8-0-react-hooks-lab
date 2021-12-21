@@ -9,7 +9,11 @@ const PetList = () => {
   useEffect(() => {
     fetch(BASE_URL + '/pets/')
       .then((res) => res.json())
-      .then((petData) => setPet(petData));
+      .then((petData) => setPet(petData))
+      .catch((error) => {
+        console.log(error);
+        setPet([]);
+      });
   }, []);
 
   return (
