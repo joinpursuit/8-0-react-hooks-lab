@@ -18,15 +18,21 @@ function AnimalTypes () {
     setUserInput(e.target.value)
   }
 
+ 
+  const handleRemoveButton=(e)=>{
+    e.nativeEvent.path[1].remove()
+    console.log(e)
+   }
+
 
   let animalArrList = animalArr.map((animal)=>{
     return (
-      <div>
-        <li>{animal}<button>-</button></li>
-      </div>
+        <li>{animal}<button onClick={handleRemoveButton}>-</button></li>
     )
   })
  
+  
+
   return (
     <section className={"animal-types"}>
       <h4>Animal Types</h4>
