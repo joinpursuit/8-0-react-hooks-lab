@@ -1,31 +1,37 @@
 import "./AnimalTypes.css";
 import { useState } from "react";
-
 const animalTypes = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
 
 function AnimalTypes() {
-	const [selected, useSelected] = useState("");
+	// the  input value
+	const [selected, setSelected] = useState("");
+	// the list of aimal that is alerady selected .
+	const [types, setTypes] = useState(animalTypes);
 
-	const [types, useTypes] = useState(animalTypes);
-
-	const Selection = (e) => {
-		useSelected(e.target.value);
+	const inputHolder = (e) => {
+		setSelected(e.target.value);
 	};
-
-	const Submission = (e) => {
+	// adding the state
+	const submission = (e) => {
 		e.preventDefault();
-		useTypes(...animalTypes, selected);
+		setSelected("");
+		if (selected !== "") {
+			setTypes(types.concat(selected));
+		}
 	};
-	//   const Removing = () => {
-	// if(e.target.value === types){
+	// delete the name selected
+	const deleteAnimal = (event) => {
+		let filter = types.filter((e) => e !== event.target.value);
+		setTypes(filter);
+	};
 
-	// }
-	//   }
-
-	const Animals = types.map((each) => {
+	const Animals = types.map((each, index) => {
 		return (
-			<li>
-				{each} <button>-</button>
+			<li key={index}>
+				{each}
+				<button value={each} onClick={deleteAnimal}>
+					-
+				</button>
 			</li>
 		);
 	});
@@ -33,11 +39,18 @@ function AnimalTypes() {
 	return (
 		<section className={"animal-types"}>
 			<h4>Animal Types</h4>
-			<form onClick={Submission}>
+			<form>
 				<label htmlFor="type">
-					<input onInput={Selection} type="text" id="animal-type" />
+					<input
+						type="text"
+						value={selected}
+						onInput={inputHolder}
+						id="animal-type"
+					/>
 				</label>
-				<input type="submit" />
+				<button onClick={submission} type="submit">
+					Submit
+				</button>
 			</form>
 			<ol>{Animals}</ol>
 		</section>
