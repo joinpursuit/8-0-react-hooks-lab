@@ -1,52 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AnimalTypes.css";
 
-const animalTypes = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
 
-class AnimalTypes extends React.Component {
-  constructor(){
-    super();
+const AnimalTypes=()=>{
+  const animalTypesArr = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
+   
+  const [ animalTypes, setAnimalTypes ] = useState(animalTypesArr);
+  const [ userInput, setUserInput ] = useState('')
 
-    this.state = {
-      animalTypes: animalTypes,
-      userInput: '',
-    }
-  }
-
-  handleSubmit=(event)=>{
+  const handleSubmit=(event)=>{
     event.preventDefault();
-    const isIncluded = this.state.animalTypes.includes(this.state.userInput);
+    const isIncluded = animalTypes.includes(userInput);
 
-    this.setState({
-      animalTypes: !isIncluded ? [this.state.userInput, ...this.state.animalTypes] : this.state.animalTypes,
-    })
+    setAnimalTypes(!isIncluded ? [userInput, ...animalTypes] : animalTypes)
   }
 
-  handlePersonInput=(event)=>{
-    this.setState({
-      userInput: event.target.value.trim().toLowerCase()
-    })
+  const handlePersonInput=(event)=>{
+    setUserInput(event.target.value.trim().toLowerCase())
   }
 
-  removeButton=(event)=>{
-    const { animalTypes } = this.state;
-    const { value } = event.target;
-
+  const removeButton=(event)=>{
     const filteredArr = animalTypes.filter((animal)=>{
-      return animal !== value;
+      return animal !== event.target.value;
     })
 
-    this.setState({
-      animalTypes: filteredArr,
-    })
+    setAnimalTypes(filteredArr);
   }
 
-  render() {
-    const animalList = this.state.animalTypes.map((animal, index)=>{
+    const animalList = animalTypes.map((animal, index)=>{
       return (
         <li key={index}>{animal}
           <button 
-            onClick={this.removeButton} 
+            onClick={removeButton} 
             value={animal}
           >-
           </button>
@@ -62,18 +47,17 @@ class AnimalTypes extends React.Component {
             type="text" 
             id="animal-type"
             placeholder="type an animal" 
-            value={ this.personInput }  
-            onChange={ this.handlePersonInput }
+            value={ handlePersonInput }  
+            onChange={ handlePersonInput }
           />
-          <input onClick={this.handleSubmit} type="submit" />
+          <input onClick={handleSubmit} type="submit" />
         </form>
         <ol>
           {animalList}
-          {this.state.userInput === 'chinchilla' ? '/confused/' : '/chinchilla/'}
+          {userInput === 'chinchilla' ? '/confused/' : '/chinchilla/'}
         </ol>
       </section>
     );
-  }
 }
 
 export default AnimalTypes;
