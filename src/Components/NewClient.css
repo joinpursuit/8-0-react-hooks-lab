@@ -1,3 +1,7 @@
+.new-client {
+  font-size: xx-small;
+}
+/* ================== */
 .new-client div {
   display: flex;
   width: 100%;

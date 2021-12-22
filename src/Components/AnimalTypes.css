@@ -1,4 +1,5 @@
 .animal-types {
+  font-size: small;
   overflow: auto;
   max-height: 30vh;
 }
