@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./AnimalTypes.css";
 
-
 const AnimalTypes=()=>{
   const animalTypesArr = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
    
