@@ -4,7 +4,7 @@ import "./AnimalTypes.css";
 const animalTypes = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
 
 const AnimalTypes = () => {
-  const [animalList, setAnimalList] = useState([]);
+  const [animalList, setAnimalList] = useState(animalTypes);
   const [text, setText] = useState("");
 
   const handleRemove = (animal) => {
@@ -14,18 +14,16 @@ const AnimalTypes = () => {
     setAnimalList(copyList);
   };
   const handleChange = (e) => {
-    setText(e.target.value);
+    setText(e.target.value.toLocaleLowerCase());
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (animalTypes.includes(text)) {
-      const ind = animalList.indexOf(text.toLocaleLowerCase());
-      if (ind === -1) setAnimalList([...animalList, text]);
-    }
+    const ind = animalList.indexOf(text);
+    if (ind === -1) setAnimalList([...animalList, text]);
     setText("");
   };
   return (
-    <section className={"animal-types"}>
+    <section className="animal-types">
       <h4>Animal Types</h4>
       <form onSubmit={handleSubmit}>
         <label htmlFor="animal-type">

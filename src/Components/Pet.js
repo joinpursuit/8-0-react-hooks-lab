@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 const Pet = (props) => {
   const [animal, setAnimal] = useState({});
   useEffect(() => {
+    console.log("done");
     setAnimal(props.pet);
   }, [props.pet]);
   const { name, kind, breed } = animal;
