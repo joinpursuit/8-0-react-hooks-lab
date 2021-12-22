@@ -20,14 +20,17 @@ function AnimalTypes () {
 
  
   const handleRemoveButton=(e)=>{
-    e.nativeEvent.path[1].remove()
-    console.log(e)
+    // e.nativeEvent.path[1].remove()
+    let removePet = animalArr.filter((animal)=> {
+      return animal !== e.target.value
+    })
+    setAnimalArr(removePet)
    }
 
 
   let animalArrList = animalArr.map((animal)=>{
     return (
-        <li>{animal}<button onClick={handleRemoveButton}>-</button></li>
+        <li>{animal}<button onClick={(e)=>handleRemoveButton(e)} value={animal}>-</button></li>
     )
   })
  
