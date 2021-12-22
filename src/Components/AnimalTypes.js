@@ -39,8 +39,8 @@ const AnimalTypes = () => {
         <input type="submit" />
       </form>
       <ol>
-        {animalList.map((animal) => (
-          <li>
+        {animalList.map((animal, i) => (
+          <li key={i}>
             {animal} <button onClick={() => handleRemove(animal)}>-</button>
           </li>
         ))}
