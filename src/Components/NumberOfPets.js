@@ -28,5 +28,10 @@ const NumberOfPets = () => {
       </section>
     );
   }
+  /* const handleClick = (event) => {
+    setPetCount(event.target.id === "more" ? petCount + 1 : petCount - 1)
+  }
+  THIS CODE WILL LET YOU USE THE SAME METHOD ON DIFFERENT BUTTONS
+  */
 
 export default NumberOfPets;
