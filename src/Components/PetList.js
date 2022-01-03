@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const BASE_URL = "https://vet-api-8-1.herokuapp.com/api/pets";
 
 const PetList=()=>{
-  const[petList, setpetList]= useState([])
+  const[pets, setPets]= useState([])
 
     useEffect(()=>{
       handleFetch();
@@ -15,25 +15,24 @@ const PetList=()=>{
       fetch(BASE_URL)
       .then((res)=> res.json())
       .then(data =>{
-        setpetList(data)
+        setPets(data)
       })
     }
-    let pets = petList.map((pet)=>{
+    let petList = pets.map(pet =>{
       return (
-        <div>
           <Pet
             key={pet.id}
             name={pet.name}
             breed={pet.breed}
             kind={pet.kind}
           />
-        </div>
+      
       )
     })
       return (
       <section className="pet-list">
         <h4>All Pets</h4>
-          {pets}
+          <article>{petList}</article>
       </section>
     );
 }
