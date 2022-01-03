@@ -9,22 +9,37 @@ const AnimalTypes=()=>{
   const[inputAnimal, setinputAnimal] = useState("")
 
 
+  const updateInputAnimal=(e)=>{
+    setinputAnimal(e.target.value)
+  }
+
   const submitAnimal=(e)=>{
     e.preventDefault()
 
-    setanimalList([...animalTypes,e.target.value])
+    if(inputAnimal !== "" && !animalList.includes(inputAnimal)){
+      setanimalList([...animalList, inputAnimal])
+    }
+    setinputAnimal("")  
   }
 
+  const removeAnimal=(e)=>{
+    let indexValue = animalList.indexOf(e.target.value)
+     let newList = animalList.filter((animal)=>{
+       return animal !== animalList[indexValue]
+     })
 
-  let listedAnimals = animalList.map((animal)=>{
-    return <li>{animal}</li>
+    setanimalList(newList)
+  }
+
+  let listedAnimals = animalList.map((animal, index)=>{
+    return <li key={index}>{animal}<button value={animal} onClick={removeAnimal}>Remove</button></li>
   })
     return (
       <section className={"animal-types"}>
         <h4>Animal Types</h4>
-        <form>
+        <form onSubmit={submitAnimal}>
           <label htmlFor="type">
-            <input onSubmit={submitAnimal} value={inputAnimal}type="text" id="animal-type" />
+            <input onChange={updateInputAnimal}value={inputAnimal}type="text" id="animal-type" />
           </label>
           <input type="submit" />
         </form>
@@ -32,21 +47,5 @@ const AnimalTypes=()=>{
       </section>
     );
 }
-// class AnimalTypes extends React.Component {
-//   render() {
-//     return (
-//       <section className={"animal-types"}>
-//         <h4>Animal Types</h4>
-//         <form>
-//           <label htmlFor="type">
-//             <input type="text" id="animal-type" />
-//           </label>
-//           <input type="submit" />
-//         </form>
-//         <ol></ol>
-//       </section>
-//     );
-//   }
-// }
 
 export default AnimalTypes;
