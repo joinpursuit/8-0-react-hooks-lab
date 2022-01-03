@@ -1,11 +1,12 @@
 import React from "react";
+import {useState} from 'react'
 import "./FirstPet.css";
 
 const FirstPet=()=>{
   const[firstPet, setPet] = useState(false)
   
-  handleCheckBox=()=>{
-
+  const handleCheckBox=(e)=>{
+    setPet(e.target.checked);
   }
 
   return (
@@ -13,9 +14,10 @@ const FirstPet=()=>{
           <h4>Is this your first pet?</h4>
           <br />
           <form>
-            <input type="checkbox" onChange={handleCheckBox}/>
+            <input type="checkbox" checked={firstPet} onChange={handleCheckBox}/>
           </form>
-          <h5></h5>
+          {firstPet && <h5>Yes</h5>}
+          {!firstPet && <h5>No</h5>}
       </section>
     );
 }
