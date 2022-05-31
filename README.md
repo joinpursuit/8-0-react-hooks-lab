@@ -49,6 +49,44 @@ Keep the following in mind for this lab as you run the tests.
 
 1. While the `cypress-watch-and-reload` package has been installed in this project, sometimes the React application will take longer to reload than the tests. If you feel as though a test should be passing that isn't, try pressing the re-run button in the Cypress tests before asking for help.
 
+
+### Hooks vs React Stateful Class Components
+
+If you've worked with array classes you would write
+
+```js
+// Declare state, where you can add more properties
+// Set default value of this.state.bookmarks to be an empty array
+this.state = {
+  bookmarks: []
+}
+
+updateBookmarks () {
+  // Do some stuff
+  // ...
+  // Update state:
+  // use generic this.setState() function, inside the function set which property will be updated
+  this.setState({bookmarks: ["This array is updated"]})
+}
+```
+
+With hooks, it does the same thing, but in a cleaner, more readable way.
+
+```js
+// Declare state for bookmarks only. If you want to add more properties, you would create a new line and call useState() again.
+// Set default value bookmarks to be an empty array
+// Set the name of the funciton that will be in charge of updating bookmarks
+const [bookmarks, setBookmarks] = useState([]);
+
+updateBookmarks() {
+  // Do some stuff
+  // ...
+  // Update state:
+  // Use the function you created and named to update just bookmarks, if you have other properties to update, you would call their specific functions as well
+  setBookmarks(["This array is updated"]);
+}
+```
+
 ## Instructions
 
 - `NavBar` - convert to functional component
