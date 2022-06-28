@@ -1,3 +1,17 @@
 .pet-list {
   max-height: 30vh;
 }
+
+.pet-list div {
+  border: solid black;
+  margin: 2ch;
+  padding-right: 3ch;
+}
+
+.pet-list li {
+  list-style: none;
+}
+
+span {
+  font-weight: bolder;
+}
