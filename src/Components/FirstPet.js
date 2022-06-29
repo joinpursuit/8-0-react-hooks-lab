@@ -3,15 +3,10 @@ import "./FirstPet.css";
 
 
 export default function FirstPet() {
-  const [checkbox, setCheckBox] = useState("No")
+  const [checkbox, setCheckBox] = useState(false)
 
-const handleCheckbox = (e) => {
-  e.preventDefault()
-  if(checkbox === "No"){
-    setCheckBox("Yes")
-  }else{
-    setCheckBox("No")
-  }
+const handleCheckbox = () => {
+ setCheckBox(!checkbox)
 
 }
 
@@ -23,7 +18,7 @@ const handleCheckbox = (e) => {
         <form>
           <input type="checkbox" onClick={handleCheckbox}/>
         </form>
-        <h5>{checkbox}</h5>
+        <h5>{checkbox ? "Yes" : "No"}</h5>
       </section>
     </div>
   )

@@ -1,49 +1,54 @@
-import React, {useState, useEffect} from "react";
+import { useState } from "react";
 import "./AnimalTypes.css";
 
 const animalTypes = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
 
+const AnimalTypes = () => {
+  const [input, setInput] = useState("");
+  const [allInputs, setAllInputs] = useState(animalTypes);
 
-export default function AnimalTypes() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!allInputs.includes(input)) {
+      setAllInputs([...allInputs, input]);
+    }
+  };
 
-  const [animalList, setAnimalList] = useState(animalTypes)
-  const [input, setInput] = useState("")
+  const handleDelete = (event) => {
+    setAllInputs(() => {
+      return allInputs.filter((input) => input !== event.target.id);
+    });
+  };
 
-  useEffect(()=> {
-    setAnimalList(animalTypes)
-  })
-
-
-  const handleSubmit = (e)=> {
-    e.preventDefault()
-    animalTypes.push(input)
-    console.log(animalTypes)
-  }
-
-
-
-  const handleChange = (e)=>{
-    e.preventDefault()
-    setInput( e.target.value )
-  }
+  const listOfAnimals = allInputs.map((animal) => {
+    return (
+      <li>
+        {animal}
+        <button onClick={handleDelete} id={animal}>
+          {" "}
+          Remove
+        </button>
+      </li>
+    );
+  });
 
   return (
-    <div>
-       <section className={"animal-types"}>
-        <h4>Animal Types</h4>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="type">
-            <input type="text" id="animal-type" value={input} onChange={handleChange}/>
-          </label>
-          <input type="submit" />
-        </form>
-        <ol>
-          {animalList.map((animal) => {
-            return <li>{animal} <button>X</button></li>
-          })}
-        </ol>
-      </section>
-    </div>
-  )
-}
+    <section className={"animal-types"}>
+      <h4>Animal Types</h4>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="type">
+          <input
+            type="text"
+            id="animal-type"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+        </label>
+        <input type="submit" />
+      </form>
+      <ol> {listOfAnimals} </ol>
+    </section>
+  );
+};
 
+export default AnimalTypes;
