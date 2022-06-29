@@ -14,15 +14,12 @@ const PetList = () => {
     .then(data => setAllPets(data))
   }, [])
 
-  console.log(allPets)
-
     return (
       <section className="pet-list">
         <h4>All Pets</h4>
         <article>
           {allPets.map(pet => {
-            console.log(pet)
-          return <Pet name={pet.name} kind={pet.kind} breed={pet.breed}/>
+          return <Pet name={pet.name} kind={pet.kind} breed={pet.breed} key={pet.id}/>
           })}
         </article>
       </section>
