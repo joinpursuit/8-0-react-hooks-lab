@@ -10,7 +10,7 @@ const AnimalTypes = () =>{
 
   const handleDelete = (e) => {
     const newList = animalTypesArr.filter((animal) => 
-      animal !== e.target.parentNode.textContent.split("")[0]
+      animal !== e.target.parentNode.textContent.split(" ")[0]
     )
     setAnimalTypeArr(newList)
   }
