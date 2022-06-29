@@ -11,7 +11,6 @@ const BASE_URL = "https://vet-lab-8-4.herokuapp.com/api";
 const App = () => {
   const [allPets, setAllPets] = useState([]);
 
-
   useEffect(() => {
     fetch(`${BASE_URL}/pets`)
       .then((res) => res.json())
