@@ -22,7 +22,7 @@ export default function FirstPet() {
             { checked ? 'Yes' : 'No'}
           </p>
         </form>
-        <h5></h5>
+        {/* <h5></h5> */}
       </section>
     );
   }
