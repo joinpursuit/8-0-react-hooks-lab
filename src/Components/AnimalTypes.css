@@ -3,6 +3,10 @@
   max-height: 30vh;
 }
 
+.submit-btn {
+  margin-left: 10px;
+}
+
 .animal-types ol,
 .animal-types form {
   margin: auto;
