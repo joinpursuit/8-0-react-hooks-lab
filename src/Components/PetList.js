@@ -4,24 +4,22 @@ import "./PetList.css";
 
 const BASE_URL = "https://vet-lab-8-4.herokuapp.com/api/pets";
 
-
 export default function PetList() {
-
   const [pets, setPets] = useState([]);
 
-useEffect(() => {
-  fetch(BASE_URL)
-    .then((response) => response.json())
-    .then((data) => {
-      setPets(data)
-    })
-})
+  useEffect(() => {
+    fetch(BASE_URL)
+      .then((response) => response.json())
+      .then((data) => {
+        setPets(data);
+      });
+  });
 
   return (
     <section className="pet-list">
       <h4>All Pets</h4>
       <article>
-        <Pet pets={ pets }/>
+        <Pet name={pets.name} breed={pets.breed} kind={pets.Kind} />
       </article>
     </section>
   );
