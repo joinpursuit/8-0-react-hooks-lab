@@ -13,7 +13,6 @@ const PetList = () => {
     axios
       .get(BASE_URL)
       .then((res) => {
-        console.log(res.data);
         setPets([...res.data]);
         renderPets(pets);
       })
