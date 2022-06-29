@@ -13,7 +13,7 @@ const FirstPet = () => {
         <input
           type="checkbox"
           checked={checked}
-          onClick={({ target }) => setChecked(target.checked)}
+          onChange={({ target }) => setChecked(target.checked)}
         />
       </form>
       <h5>{checked ? "Yes" : "No"}</h5>
