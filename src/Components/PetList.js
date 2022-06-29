@@ -19,7 +19,11 @@ export default function PetList() {
     <section className="pet-list">
       <h4>All Pets</h4>
       <article>
-        <Pet name={pets.name} breed={pets.breed} kind={pets.Kind} />
+        {pets.map((pet) => {
+         return (
+          <Pet name={pet.name} breed={pet.breed} kind={pet.Kind} />
+         ) 
+        })}
       </article>
     </section>
   );
