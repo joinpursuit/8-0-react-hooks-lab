@@ -1,23 +1,23 @@
-import React from "react";
-import "./AnimalTypes.css";
+/** @format */
 
-const animalTypes = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
+import React from 'react';
+import './AnimalTypes.css';
 
-class AnimalTypes extends React.Component {
-  render() {
-    return (
-      <section className={"animal-types"}>
-        <h4>Animal Types</h4>
-        <form>
-          <label htmlFor="type">
-            <input type="text" id="animal-type" />
-          </label>
-          <input type="submit" />
-        </form>
-        <ol></ol>
-      </section>
-    );
-  }
+const animalTypes = ['dog', 'cat', 'ferret', 'bird', 'fish', 'snake', 'lizard'];
+
+function AnimalTypes() {
+	return (
+		<section className={'animal-types'}>
+			<h4>Animal Types</h4>
+			<form>
+				<label htmlFor='type'>
+					<input type='text' id='animal-type' />
+				</label>
+				<input type='submit' />
+			</form>
+			<ol></ol>
+		</section>
+	);
 }
 
 export default AnimalTypes;
