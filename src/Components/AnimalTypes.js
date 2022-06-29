@@ -1,23 +1,51 @@
-import React from "react";
+import React, {useState} from "react";
 import "./AnimalTypes.css";
 
-const animalTypes = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
+let animalTypes = ["dog", "cat", "ferret", "bird", "fish", "snake", "lizard"];
 
-class AnimalTypes extends React.Component {
-  render() {
-    return (
-      <section className={"animal-types"}>
-        <h4>Animal Types</h4>
-        <form>
-          <label htmlFor="type">
-            <input type="text" id="animal-type" />
-          </label>
-          <input type="submit" />
-        </form>
-        <ol></ol>
-      </section>
-    );
-  }
+export default function AnimalTypes() {
+const [animalTypesArr, setAnimalTypesArr] = useState(animalTypes)
+const [input, setInput] = useState("")
+
+
+const handleDelete = (e) => {
+const newList = animalTypesArr.filter((animeType) => animeType !==  e.target.parentNode.textContent.split(" ")[0])
+setAnimalTypesArr(newList)
 }
 
-export default AnimalTypes;
+const handleChange = (e) => {
+const {value} = e.target
+setInput(value)
+}
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+  setAnimalTypesArr(oldArr=> [...oldArr, input])
+
+}
+
+
+  return (
+    <section className={"animal-types"}>
+      <h4>Animal Types</h4>
+
+      <ol>
+        {animalTypesArr.map((animalType) => {
+          return (
+            <>
+            <li>{animalType} <button onClick={handleDelete}>Delete</button></li> 
+            </>
+          );
+        })}
+      </ol>
+
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="type">
+          <input onChange={handleChange} type="text" id="animal-type" />
+        </label>
+        <input  type="submit" />
+      </form>
+      <ol></ol>
+    </section>
+  );
+}
