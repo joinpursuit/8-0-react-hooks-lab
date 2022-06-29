@@ -1,6 +1,7 @@
+import React from "react";
 import "./Pet.css";
 
-export const Pet = ({ name, kind, breed }) => {
+const Pet = ({ name, kind, breed }) => {
   return (
     <div className="pet">
       <h3>{name}</h3>
