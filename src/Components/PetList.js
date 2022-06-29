@@ -4,8 +4,8 @@ import "./PetList.css";
 
 const BASE_URL = "http://localhost:5000/api";
 
-class PetList extends React.Component {
-  render() {
+const PetList = () => {
+  
     return (
       <section className="pet-list">
         <h4>All Pets</h4>
@@ -13,6 +13,5 @@ class PetList extends React.Component {
       </section>
     );
   }
-}
 
 export default PetList;
