@@ -130,7 +130,7 @@ you will need to hit.
 
 If you need, you can access the API at the following repository. Follow the instructions there to get it installed.
 
-- [Resource: Veterinarian API](https://github.com/joinpursuit/resource-veterinarian-api)
+- [Resource: Veterinarian API]https://github.com/joinpursuit/resource-veterinarian-api()
 
 #### `/api/pets`
 
