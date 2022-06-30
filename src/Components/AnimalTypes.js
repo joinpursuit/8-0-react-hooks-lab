@@ -11,9 +11,8 @@ const AnimalTypes = () => {
     event.preventDefault();
     if (!animalType.includes(input)) {
       setAnimalType([...animalType, input]);
-      setInput('')
+      setInput('');
     }
-    
   };
 
   const handleDelete = (event) => {

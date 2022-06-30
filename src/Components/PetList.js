@@ -48,20 +48,3 @@ export default PetList;
 //     );
 //   }
 // }
-
-//let isData = true;
-// declare the async data fetching function
-// const fetchData = async () => {
-//   // get the data from the api
-//   const response = await fetch(`${BASE_URL}`);
-//   // convert the data to json
-//   const json = await response.json();
-
-//   // set state with the result
-//   if (!isData) setApiData(json);
-// };
-
-// // call the function
-// fetchData()
-//   // make sure to catch any error
-//   .catch(console.error);
