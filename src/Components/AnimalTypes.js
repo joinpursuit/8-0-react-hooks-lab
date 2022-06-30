@@ -44,7 +44,7 @@ function AnimalTypes() {
   return (
     <section className={'animal-types'}>
       <h4>Animal Types</h4>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor='type'>
           <input
             type='text'
@@ -53,7 +53,7 @@ function AnimalTypes() {
             onChange={handleChange}
           />
         </label>
-        <input type='submit' onClick={handleSubmit} />
+        <input type='submit' />
       </form>
       <br />
       <ol>
