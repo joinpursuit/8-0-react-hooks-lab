@@ -89,14 +89,14 @@ updateBookmarks() {
 
 ## Instructions
 
-- `NavBar` - convert to functional component
-- `Footer` - convert to functional component
-- `FirstPet` - [Work with a Boolean]
-  - Convert to functional component
+X - `NavBar` - convert to functional component
+X - `Footer` - convert to functional component
+X- `FirstPet` - [Work with a Boolean]
+- Convert to functional component
   - Use a checkbox to update state of `firstPet` to have a value `true` or `false`
   - Use conditional rendering to render the word `No` if the checkbox is unchecked
   - Use conditional rendering to render the word `Yes` if the checkbox is checked
-- `NumOfPets` - [Work with numbers, work with multiple functions]
+X- `NumOfPets` - [Work with numbers, work with multiple functions]
   - Convert to a functional component
   - Add two buttons one that says `-` and one that says `+`
   - On click of `+` increase the number of pets by 1
