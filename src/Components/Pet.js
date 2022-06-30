@@ -1,13 +1,13 @@
-import "./Pet.css";
+import './Pet.css'
 
-export const Pet = ({ name, kind, breed }) => {
+export const Pet = (props) => {
   return (
-    <div className="pet">
-      <h3>{name}</h3>
-      <h4>{breed}</h4>
-      <h5>{kind}</h5>
+    <div className='pet'>
+      <h3>{props.name}</h3>
+      <h4>{props.breed}</h4>
+      <h5>{props.kind}</h5>
     </div>
-  );
-};
+  )
+}
 
-export default Pet;
+export default Pet
