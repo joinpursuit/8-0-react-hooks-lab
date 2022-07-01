@@ -10,7 +10,7 @@ const FirstPet = () => {
       <br />
       <form>
         <input
-          name="option" 
+          name="first-pet" 
           type="checkbox"
           checked={firstPet}
           onChange={(e) => setFirstPet(e.target.checked)} 
