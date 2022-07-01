@@ -9,7 +9,7 @@ const NumberOfPets = () => {
   const petCounter = (event) => {
     if (event === "increase") {
       setNumOfPets(numOfPets + 1);
-    } else if (event === "decrease") {
+    } else if (event === "decrease" && numOfPets > 0) {
       setNumOfPets(numOfPets - 1)
     }
   }
