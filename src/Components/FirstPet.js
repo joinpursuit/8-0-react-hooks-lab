@@ -16,7 +16,7 @@ const FirstPet = () => {
           onChange={(e) => setFirstPet(e.target.checked)} 
         />
       </form>
-      <h5>{(firstPet) ? 'Yes' : 'No'}</h5>
+      <h5>{firstPet ? 'Yes' : 'No'}</h5>
     </section>
   );
 }
