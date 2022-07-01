@@ -30,10 +30,17 @@ function AnimalTypes() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (!animalTypes.includes(value)) {
     setAnimalTypes([ ...animalTypes, value])
-    //setAnimalTypes(...new Set(animalTypes))
-    
+    }
   }
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    setAnimalTypes(() => {
+      return animalTypes.filter((animal) => animal !== e.target.id);
+    });
+  };
   console.log(...new Set(animalTypes))
   console.log(value)
   return (
@@ -46,7 +53,7 @@ function AnimalTypes() {
           <input type="submit" />
         </form>
         <ol>
-         {animalTypes.map((animal) => <li>{animal}<button onClick={e => animalTypes.splice((animalTypes.indexOf(e.target.value)),1)}>-</button></li>)}
+         {animalTypes.map((animal) => <li>{animal}<button id={animal} onClick={handleDelete}>-</button></li>)}
         </ol>
       </section>
   )
