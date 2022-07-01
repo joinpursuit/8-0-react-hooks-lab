@@ -10,7 +10,7 @@ const NewClient = () => {
   return (
     <section className="new-client">
       <h4>New Client Info</h4>
-      <div>
+      <div className="container">
         <form>
           <label htmlFor="firstName">First Name</label>
           <input 
