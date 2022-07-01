@@ -59,9 +59,9 @@ export default function NewClient() {
         </form>
         <article>
           <h5>First Name: {contactInfo.firstName} </h5>
-          <h5>lastName {contactInfo.lastName}</h5>
-          <h5>phone {contactInfo.telephone}</h5>
-          <h5>email {contactInfo.email}</h5>
+          <h5>Last Name {contactInfo.lastName}</h5>
+          <h5>Phone {contactInfo.telephone}</h5>
+          <h5>Email {contactInfo.email}</h5>
         </article>
       </div>
     </section>
