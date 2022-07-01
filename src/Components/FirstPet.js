@@ -3,11 +3,6 @@ import "./FirstPet.css";
 
 const FirstPet = () => {
   const [firstPet, setFirstPet] = useState(false);
-
-  const handleCheck = (event) => {
-    const { value } = event.target.value;
-    setFirstPet(value);
-  }
   
   return (
     <section className="first-pet">
@@ -18,7 +13,7 @@ const FirstPet = () => {
           name="option" 
           type="checkbox"
           checked={firstPet}
-          onChange={e => setFirstPet(e.target.checked)} 
+          onChange={(e) => setFirstPet(e.target.checked)} 
         />
       </form>
       <h5>{(firstPet) ? 'Yes' : 'No'}</h5>
