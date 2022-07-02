@@ -1,21 +1,26 @@
+.container {}
+.container h4 {
+  text-align: center;
+}
 .animal-types {
-  overflow: auto;
+  padding: 0.5rem;overflow: auto;box-sizing: border-box;
   /* max-height: 30vh; */
 }
-
 .animal-types ol,
 .animal-types form {
   margin: auto;
   width: 50%;
 }
-
 .animal-types li {
   display: flex;
   justify-content: space-between;
 }
-
 .animal-types button {
   background-color: var(--gold);
   padding: 0.2em 1em;
   margin: 0.1em;
+}
+.error__validation {
+  padding: 0.5rem 1rem;font-weight: bold;color: #FFF;
+  background-color: firebrick;border-radius: 2px;
 }

@@ -37,7 +37,7 @@ const AnimalTypes = () => {
   }
 
   return (
-    <section className={"animal-types"}>
+    <section className={"animal-types container"}>
       <h4>Animal Types</h4>
       <form onSubmit={handleSubmit}>
         <label htmlFor="type">
