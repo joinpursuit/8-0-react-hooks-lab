@@ -18,10 +18,12 @@ const AnimalTypes = () => {
     event.preventDefault();
 
     // >> Validating duplicated value
-    if(validateCurrentType(animal.trim().toLowerCase())) {
-      animalList.push(animal.trim());
-    } else {
-      setError(true);
+    if(animal !== '') {
+      if(validateCurrentType(animal.trim().toLowerCase())) {
+        animalList.push(animal.trim());
+      } else {
+        setError(true);
+      }
     }
     
     setAnimal('');
@@ -40,15 +42,14 @@ const AnimalTypes = () => {
     <section className={"animal-types container"}>
       <h4>Animal Types</h4>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="type">
+        <label htmlFor="type"></label>
         {(error) ? <p className="error__validation">{'Error: Animal type already exist'}</p> : null}
-          <input 
-            type="text" 
-            id="animal-type"
-            value={animal}
-            onChange={handleChange}
-          />
-        </label>
+        <input 
+          type="text" 
+          id="animal-type"
+          value={animal}
+          onChange={handleChange}
+        />
         <input 
           type="submit"
         />
