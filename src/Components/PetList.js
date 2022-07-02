@@ -4,7 +4,7 @@ import "./PetList.css";
 
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/api/pets";
+const BASE_URL = "https://serene-tundra-77911.herokuapp.com/api/pets";
 
 const PetList = () => {
   const [ petList, setPetList ] = useState([]);

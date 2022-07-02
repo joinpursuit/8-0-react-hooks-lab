@@ -5,18 +5,20 @@
   justify-content: space-evenly;
 }
 .new-client h4 {
-  display: block;
+  display: block;text-align: center;
 }
 .new-client form,
 .new-client article {
-  min-width: 45%;
-  margin-bottom: 2em;
+  width: 30%;padding: 1rem;margin: 1rem auto;
 }
-.new-client input,
+.new-client .form__control {
+  margin: 1.0rem 0;display: block;
+}
 .new-client label {
-  display: block;
-  width: 80%;
-  margin: auto;
+  display: block;font-size:0.8rem;line-height: 1rem; font-weight: 500;color: #333;
+}
+.new-client input {
+  width: 100%;padding: 0.5rem;box-sizing: border-box;
 }
 input {
   padding: 0.2em;

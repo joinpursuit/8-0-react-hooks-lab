@@ -8,10 +8,11 @@ const NewClient = () => {
   const [ email, setEmail ] = useState('');
   
   return (
-    <section className="new-client">
+    <section className="new-client container">
       <h4>New Client Info</h4>
       <div className="container">
         <form>
+          <div className="form__control">
           <label htmlFor="firstName">First Name</label>
           <input 
             type="text" 
@@ -19,7 +20,8 @@ const NewClient = () => {
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
-          
+          </div>
+          <div className="form__control">
           <label htmlFor="lastName">Last Name</label>
           <input 
             type="text" 
@@ -27,7 +29,8 @@ const NewClient = () => {
             value={lastName}
             onChange={(e) => setLastName(e.target.value)} 
           />
-
+          </div>
+          <div className="form__control">
           <label htmlFor="phone">Telephone</label>
           <input 
             type="tel" 
@@ -35,7 +38,8 @@ const NewClient = () => {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
-
+          </div>
+          <div className="form__control">
           <label htmlFor="email">Email</label>
           <input 
             type="email" 
@@ -43,6 +47,7 @@ const NewClient = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          </div>
         </form>
         <article>
           <h5>{firstName}</h5>
