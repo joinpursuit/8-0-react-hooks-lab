@@ -56,7 +56,7 @@ const AnimalTypes = () => {
       </form>
       <ol>
         {animalList.map((animal, index) => {
-          return <li key={index}>{animal} <button onClick={() => handleRemove(animal)}>-</button></li>
+          return <li key={index}>{animal} <button onClick={() => handleRemove(animal)}>x</button></li>
         })}
       </ol>
     </section>
