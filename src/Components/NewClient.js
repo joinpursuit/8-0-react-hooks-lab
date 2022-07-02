@@ -49,7 +49,7 @@ const NewClient = () => {
           />
           </div>
         </form>
-        <article>
+        <article className="client__info">
           <h5>{firstName}</h5>
           <h5>{lastName}</h5>
           <h5>{phone}</h5>

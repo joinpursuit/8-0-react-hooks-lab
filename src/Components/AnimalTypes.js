@@ -42,8 +42,9 @@ const AnimalTypes = () => {
     <section className={"animal-types container"}>
       <h4>Animal Types</h4>
       <form onSubmit={handleSubmit}>
+      {(error) ? <p className="error__validation">{'Error: Animal type already exist'}</p> : null}
+      <div className="form__control">
         <label htmlFor="type"></label>
-        {(error) ? <p className="error__validation">{'Error: Animal type already exist'}</p> : null}
         <input 
           type="text" 
           id="animal-type"
@@ -53,6 +54,7 @@ const AnimalTypes = () => {
         <input 
           type="submit"
         />
+        </div>
       </form>
       <ol>
         {animalList.map((animal, index) => {

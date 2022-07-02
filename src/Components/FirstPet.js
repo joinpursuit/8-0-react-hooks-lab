@@ -7,8 +7,9 @@ const FirstPet = () => {
   return (
     <section className="first-pet">
       <h4>Is this your first pet?</h4>
-      <br />
+      
       <form>
+        <label>Please check the option:</label>
         <input
           name="first-pet" 
           type="checkbox"

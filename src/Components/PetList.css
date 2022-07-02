@@ -1,5 +1,37 @@
 .pet-list {
-  padding: 0.5rem;box-sizing: border-box;
+  padding: 0rem;box-sizing: border-box;
   max-height: 100vh;
   
+}
+.pet-list > h4 {
+  padding: 1rem;margin: 0;display: block;text-align: center;color: #1d3557; background-color: #a8dadc;
+}
+.pet-list .pets__data {
+  margin: 1rem auto;
+}
+.pet-list .pets__data .pet {
+  width: auto;padding: 1rem; margin: 1rem;background-color: #f4f1de;border: none;
+  border-bottom: 2px solid #e5e5e5;
+  border-radius: 0;box-sizing: border-box;
+}
+.pet-list .pets__data .pet p {
+  padding: 0.5rem;display: flex;
+}
+.pet-list .pets__data .pet p:nth-of-type(odd) {
+  background-color: #f5f3f4;
+}
+.pet-list .pets__data .pet p span {
+  width: 50%;font-size: 1.0rem;line-height: 1.4rem;font-weight: 600;
+}
+.pet-list .pets__data .pet p span.item__value {
+  text-align: left;font-size: 1.2rem; font-weight: bold;
+}
+.pet-list .pets__data .pet p:nth-child(1) span.item__value {
+  padding: 0 1rem; color: #0a0908;
+}
+.pet-list .pets__data .pet p:nth-child(2) span.item__value {
+  padding: 0 1rem;color: #22333b;
+}
+.pet-list .pets__data .pet p:nth-child(3) span.item__value {
+  padding: o 1rem;color: #22333b;
 }

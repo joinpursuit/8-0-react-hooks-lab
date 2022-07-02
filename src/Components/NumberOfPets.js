@@ -5,11 +5,12 @@ const NumberOfPets = () => {
   const [ numOfPets, setNumOfpets ] = useState(1)
 
   return (
-    <section className="num-of-pets">
+    <section className="num-of-pets container">
       <h4>Number of Pets</h4>
-      <h5>{numOfPets}</h5>
-      <div>
+      
+      <div className="button">
         <button id="less" onClick={() => setNumOfpets(numOfPets - 1)}>-</button>
+        <h5>{numOfPets}</h5>
         <button id="more" onClick={() => setNumOfpets(numOfPets + 1)}>+</button>
       </div>
     </section>
