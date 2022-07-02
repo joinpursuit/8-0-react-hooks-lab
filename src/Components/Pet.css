@@ -1,8 +1,11 @@
+.container > h4 {
+ text-align: center;font-weight: bold;
+}
 .pet {
+  padding: 1rem;margin: 1rem;
   border: 1px solid var(--gold);
   border-radius: 5px;
   text-align: center;
-  width: 100%;
   margin-bottom: 10px;
 }
 
