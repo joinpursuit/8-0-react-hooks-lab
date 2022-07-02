@@ -18,7 +18,7 @@ const AnimalTypes = () => {
     event.preventDefault();
 
     // >> Validating duplicated value
-    if(validateCurrentType(animal.trim())) {
+    if(validateCurrentType(animal.trim().toLowerCase())) {
       animalList.push(animal.trim());
     } else {
       setError(true);
@@ -41,7 +41,7 @@ const AnimalTypes = () => {
       <h4>Animal Types</h4>
       <form onSubmit={handleSubmit}>
         <label htmlFor="type">
-        {(error) ? <p className="error__validation">Error: Animal type already exist</p> : null}
+        {(error) ? <p className="error__validation">{'Error: Animal type already exist'}</p> : null}
           <input 
             type="text" 
             id="animal-type"
