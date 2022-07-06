@@ -49,7 +49,6 @@ Keep the following in mind for this lab as you run the tests.
 
 1. While the `cypress-watch-and-reload` package has been installed in this project, sometimes the React application will take longer to reload than the tests. If you feel as though a test should be passing that isn't, try pressing the re-run button in the Cypress tests before asking for help.
 
-
 ### Hooks vs React Stateful Class Components
 
 If you've worked with array classes you would write
@@ -89,26 +88,26 @@ updateBookmarks() {
 
 ## Instructions
 
-- `NavBar` - convert to functional component
-- `Footer` - convert to functional component
-- `FirstPet` - [Work with a Boolean]
-  - Convert to functional component
-  - Use a checkbox to update state of `firstPet` to have a value `true` or `false`
-  - Use conditional rendering to render the word `No` if the checkbox is unchecked
-  - Use conditional rendering to render the word `Yes` if the checkbox is checked
-- `NumOfPets` - [Work with numbers, work with multiple functions]
-  - Convert to a functional component
-  - Add two buttons one that says `-` and one that says `+`
-  - On click of `+` increase the number of pets by 1
-  - On click of `-` decrease the number of pets by 1, Do not allow for a negative amount of pets
-- `NewClient` - [Work with strings, work with multiple stateful properties]
-  - Convert to functional component
-  - Make sure your form contains:
-    - `firstName`, type `"text"`
-    - `lastName`, type `"text"`
-    - `phone`, type `"tel"`
-    - `email`, type `"email"`
-  - Render the values in an `article` alongside the form as you type
+- [ok] `NavBar` - convert to functional component
+- [ok] `Footer` - convert to functional component
+- [ok] `FirstPet` - [Work with a Boolean]
+  - [ok] Convert to functional component
+  - [ok] Use a checkbox to update state of `firstPet` to have a value `true` or `false`
+  - [ok] Use conditional rendering to render the word `No` if the checkbox is unchecked
+  - [ok] Use conditional rendering to render the word `Yes` if the checkbox is checked
+- [ok] `NumOfPets` - [Work with numbers, work with multiple functions]
+  - [ok] Convert to a functional component
+  - [ok] Add two buttons one that says `-` and one that says `+`
+  - [ok] On click of `+` increase the number of pets by 1
+  - [ok] On click of `-` decrease the number of pets by 1, Do not allow for a negative amount of pets
+- [ok] `NewClient` - [Work with strings, work with multiple stateful properties]
+  - [ok] Convert to functional component
+  - [ok] Make sure your form contains:
+    - [ok] `firstName`, type `"text"`
+    - [ok] `lastName`, type `"text"`
+    - [ok] `phone`, type `"tel"`
+    - [ok] `email`, type `"email"`
+  - [ok] Render the values in an `article` alongside the form as you type
 - `AnimalTypes` - [Work with arrays]
   - Convert to functional component
   - Be able to render a list of animals (already provided)
@@ -138,13 +137,13 @@ Making a GET request to this path will return an array of pets. The response wil
 
 ```js
 [
-  {
-    id: "dGXf5O9",
-    name: "Lady",
-    kind: "Dog",
-    breed: "Doberman Pinscher",
-    employeeId: "z7GIN_i",
-  },
-  // ...
+	{
+		id: 'dGXf5O9',
+		name: 'Lady',
+		kind: 'Dog',
+		breed: 'Doberman Pinscher',
+		employeeId: 'z7GIN_i',
+	},
+	// ...
 ];
 ```

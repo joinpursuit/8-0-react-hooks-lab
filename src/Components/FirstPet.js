@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./FirstPet.css";
 
-class FirstPet extends React.Component {
-  render() {
-    return (
-      <section className="first-pet">
-        <h4>Is this your first pet?</h4>
-        <br />
-        <form>
-          <input type="checkbox" />
-        </form>
-        <h5></h5>
-      </section>
-    );
-  }
+const FirstPet = () => {
+  const [firstPet, setFirstPet] = useState(false);
+  
+  return (
+    <section className="first-pet">
+      <h4>Is this your first pet?</h4>
+      
+      <form>
+        <label>Please check the option:</label>
+        <input
+          name="first-pet" 
+          type="checkbox"
+          checked={firstPet}
+          onChange={(e) => setFirstPet(e.target.checked)} 
+        />
+      </form>
+      <h5>{firstPet ? 'Yes' : 'No'}</h5>
+    </section>
+  );
 }
 
 export default FirstPet;

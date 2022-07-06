@@ -1,23 +1,30 @@
 .new-client div {
   display: flex;
   width: 100%;
-  max-height: 40vh;
+  /* max-height: 40vh; */
   justify-content: space-evenly;
 }
 .new-client h4 {
-  display: block;
+  padding: 1rem;margin: 0;display: block;text-align: center;color: #1d3557; background-color: #a8dadc;
 }
-.new-client form,
-.new-client article {
-  min-width: 45%;
-  margin-bottom: 2em;
+.new-client form {
+  width: 30%;padding: 0 2rem;margin: 0rem auto;
 }
-.new-client input,
+.new-client .form__control {
+  margin: 1.0rem 0;display: block;
+}
 .new-client label {
-  display: block;
-  width: 80%;
-  margin: auto;
+  display: block;font-size:0.8rem;line-height: 1rem; font-weight: 500;color: #333;
+}
+.new-client input {
+  width: 100%;padding: 0.5rem;box-sizing: border-box;border: 2px solid #bee3db;border-radius: 3px;
 }
 input {
   padding: 0.2em;
+}
+.client__info {
+  width: 30%;padding: 2rem;width: 30%;margin: 2rem auto;background-color: #edf2f4;
+}
+.client__info h5 {
+  margin: 0.6rem 0;font-size: 1.2rem;font-weight: 600;
 }
