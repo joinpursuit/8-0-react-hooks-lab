@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import "./AnimalTypes.css";
 
 const AnimalTypes = () => {
-  const [newAnimal, setAnimal] = useState("");
-  const [animalTypes, newTypes] = useState([
+  const [animal, setAnimal] = useState("");
+  const [animalTypes, setAnimalTypes] = useState([
     "dog",
     "cat",
     "ferret",
     "bird",
     "fish",
     "snake",
-    "lizard"
+    "lizard",
   ]);
 
   const handleAnimal = (e) => {
@@ -20,36 +20,45 @@ const AnimalTypes = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    newTypes((prevAnimals) => {
+    setAnimalTypes((prevAnimals) => {
+      return [...prevAnimals, animal];
     });
+    setAnimal("");
   };
 
   const handleDelete = (e) => {
-    animalTypes.splice(animalTypes.indexOf(e.target.key), 1);
+    console.log(e.target.id);
+    setAnimalTypes((prevAnimals) => {
+      return prevAnimals.filter((animal, index) => {
+        return index == e.target.id ? false : true; 
+      });
+    });
   };
 
   return (
     <section className={"animal-types"}>
       <h4>Animal Types</h4>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="type">
           <input
             type="text"
             id="animal-type"
-            value={newAnimal}
+            value={animal}
             onChange={handleAnimal}
           />
         </label>
-        <input type="submit" onSubmit={handleSubmit} />
+        <input type="submit" />
       </form>
       <ol>
-        {animalTypes.map((animal) => {
+        {animalTypes.map((animal, index) => {
           return (
             <li key={animal}>
               {animal}
-              <button onClick={handleDelete} />
+              <button id={index} onClick={handleDelete}>
+                DELETE
+              </button>
             </li>
-          )
+          );
         })}
       </ol>
     </section>
