@@ -7,7 +7,7 @@ function AnimalTypes() {
   const [aTypes, setATypes] = useState(animalTypes);
   function handleSubmit(e) {
     e.preventDefault();
-    const newAnimal = e.target["animal-type"].value;
+    const newAnimal = e.target["animal-type"].value.trim();
     if (!animalTypes.includes(newAnimal)) {
       setATypes([...aTypes, newAnimal]);
     }
