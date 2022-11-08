@@ -11,8 +11,7 @@ function PetList() {
     fetch(BASE_URL)
       .then((res) => res.json())
       .then((data) => setPets(data));
-    console.log(pets);
-  }, [pets]);
+  }, []);
   return (
     <section className="pet-list">
       <h4>All Pets</h4>
