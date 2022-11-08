@@ -1,6 +1,7 @@
 import "./Pet.css";
 
-export const Pet = ({ name, kind, breed }) => {
+export const Pet = ({ pet }) => {
+  const { name, kind, breed } = pet;
   return (
     <div className="pet">
       <h3>{name}</h3>
